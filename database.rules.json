@@ -1,0 +1,65 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": "auth != null",
+        ".write": "auth != null && ((!data.exists() && newData.child('host').val() === auth.uid && newData.child('status').val() === 'waiting' && newData.child('turn').val() === 'host' && newData.child('round').val() === 0 && !newData.child('guest').exists() && !newData.child('winner').exists() && !newData.child('guess').exists()) || (data.exists() && newData.exists() && newData.child('host').val() === data.child('host').val() && newData.child('hostName').val() === data.child('hostName').val() && newData.child('created').val() === data.child('created').val() && ((data.child('status').val() === 'waiting' && !data.child('guest').exists() && auth.uid !== data.child('host').val() && newData.child('guest').val() === auth.uid && newData.child('status').val() === 'playing' && newData.child('round').val() === data.child('round').val() && newData.child('turn').val() === data.child('turn').val() && !newData.child('guess').exists() && !newData.child('winner').exists()) || (data.child('status').val() === 'playing' && newData.child('guest').val() === data.child('guest').val() && newData.child('guestName').val() === data.child('guestName').val() && newData.child('round').val() === data.child('round').val() && !newData.child('winner').exists() && ((newData.child('status').val() === 'playing' && newData.child('turn').val() !== data.child('turn').val() && !newData.child('guess').exists() && !newData.child('guesser').exists() && ((data.child('turn').val() === 'host' && auth.uid === data.child('host').val() && newData.child('turn').val() === 'guest') || (data.child('turn').val() === 'guest' && auth.uid === data.child('guest').val() && newData.child('turn').val() === 'host'))) || (newData.child('status').val() === 'guessing' && newData.child('turn').val() === data.child('turn').val() && newData.child('guess').isNumber() && newData.child('guess').val() >= 0 && newData.child('guess').val() < 40 && newData.child('guesser').val() === data.child('turn').val() && ((data.child('turn').val() === 'host' && auth.uid === data.child('host').val()) || (data.child('turn').val() === 'guest' && auth.uid === data.child('guest').val()))))) || (data.child('status').val() === 'guessing' && newData.child('status').val() === 'finished' && newData.child('guest').val() === data.child('guest').val() && newData.child('guestName').val() === data.child('guestName').val() && newData.child('round').val() === data.child('round').val() && newData.child('turn').val() === data.child('turn').val() && newData.child('guess').val() === data.child('guess').val() && newData.child('guesser').val() === data.child('guesser').val() && ((data.child('guesser').val() === 'host' && auth.uid === data.child('guest').val()) || (data.child('guesser').val() === 'guest' && auth.uid === data.child('host').val())) && (newData.child('winner').val() === 'host' || newData.child('winner').val() === 'guest')) || (data.child('status').val() === 'finished' && newData.child('status').val() === 'playing' && newData.child('guest').val() === data.child('guest').val() && newData.child('guestName').val() === data.child('guestName').val() && newData.child('round').val() === data.child('round').val() + 1 && newData.child('turn').val() === 'host' && !newData.child('winner').exists() && !newData.child('guess').exists() && !newData.child('guesser').exists()))))",
+        ".validate": "newData.hasChildren(['host','hostName','round','turn','status','created']) && newData.childrenCount <= 11",
+        "host": {
+          ".validate": "newData.isString()"
+        },
+        "hostName": {
+          ".validate": "newData.isString() && newData.val().length <= 24"
+        },
+        "guest": {
+          ".validate": "newData.isString()"
+        },
+        "guestName": {
+          ".validate": "newData.isString() && newData.val().length <= 24"
+        },
+        "round": {
+          ".validate": "newData.isNumber()"
+        },
+        "turn": {
+          ".validate": "newData.val() === 'host' || newData.val() === 'guest'"
+        },
+        "status": {
+          ".validate": "newData.val() === 'waiting' || newData.val() === 'playing' || newData.val() === 'guessing' || newData.val() === 'finished'"
+        },
+        "created": {
+          ".validate": "newData.isNumber()"
+        },
+        "winner": {
+          ".validate": "newData.val() === 'host' || newData.val() === 'guest'"
+        },
+        "guesser": {
+          ".validate": "newData.val() === 'host' || newData.val() === 'guest'"
+        },
+        "guess": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 40"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  },
+  "secrets": {
+    "$room": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid && root.child('rooms').child($room).exists() && (root.child('rooms').child($room).child('host').val() === auth.uid || root.child('rooms').child($room).child('guest').val() === auth.uid) && newData.hasChildren(['round','character']) && newData.child('round').val() === root.child('rooms').child($room).child('round').val() && (!data.exists() || newData.child('round').val() > data.child('round').val())",
+        ".validate": "newData.childrenCount === 2",
+        "round": {
+          ".validate": "newData.isNumber()"
+        },
+        "character": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 40"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
