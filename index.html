@@ -38,12 +38,13 @@ button:focus-visible,.tile:focus-visible{outline:3px solid #fff;outline-offset:2
 #aiGuessButton{width:100%}
 #aiFeed .qa-item{font-size:14px}
 @media(max-width:850px){#aiPanel{position:static}}
+.ai-difficulty-label{display:inline-flex;align-items:center;gap:7px;color:#fff;font-weight:650}.ai-difficulty-label select{background:#fff;color:#303b45;min-width:125px}@media(max-width:720px){.ai-difficulty-label{width:100%;justify-content:space-between}}
 </style></head><body><canvas id="winConfetti" aria-hidden="true"></canvas><header><div class="brand-heading"><img class="brand-logo" src="data:image/png;base64,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" alt="St. Paul’s Bloor Street"><div class="brand-copy"><h1>Staff Guess Who?</h1><p>40 familiar faces · One mystery person</p></div></div></header><main>
-<section id="setup" class="panel"><h2>Play with a friend</h2><p class="muted">Create a private online room, or enter a friend's six-letter code.</p><div class="controls"><input id="playerName" placeholder="Your name" maxlength="24" aria-label="Your name"><button id="create">Create room</button><input id="roomInput" placeholder="Room code" maxlength="6" style="width:145px" aria-label="Room code"><button id="join" class="secondary">Join room</button><button id="playAI" type="button">Play against AI</button></div><p id="setupMsg" class="muted small"></p><details style="margin-top:12px"><summary>First-time setup (site owner only)</summary><p class="help">To enable multiplayer, open <code>firebase-config.js</code> and paste the Firebase web app configuration. Enable <b>Anonymous Authentication</b> and <b>Realtime Database</b>, then apply the database rules in <code>database.rules.json</code>. Publish the files together on GitHub Pages. Players will not need Firebase accounts.</p></details></section>
+<section id="setup" class="panel"><h2>Play with a friend</h2><p class="muted">Create a private online room, or enter a friend's six-letter code.</p><div class="controls"><input id="playerName" placeholder="Your name" maxlength="24" aria-label="Your name"><button id="create">Create room</button><input id="roomInput" placeholder="Room code" maxlength="6" style="width:145px" aria-label="Room code"><button id="join" class="secondary">Join room</button><label for="aiDifficulty" class="ai-difficulty-label">AI skill <select id="aiDifficulty" aria-label="AI difficulty"><option value="easy">Easy</option><option value="smart" selected>Smart</option><option value="smartest">Smartest</option></select></label><button id="playAI" type="button">Play against AI</button></div><p id="setupMsg" class="muted small"></p><details style="margin-top:12px"><summary>First-time setup (site owner only)</summary><p class="help">To enable multiplayer, open <code>firebase-config.js</code> and paste the Firebase web app configuration. Enable <b>Anonymous Authentication</b> and <b>Realtime Database</b>, then apply the database rules in <code>database.rules.json</code>. Publish the files together on GitHub Pages. Players will not need Firebase accounts.</p></details></section>
 <section id="game" class="hidden"><div class="panel"><div class="controls"><span class="pill">Room: <b id="roomCode"></b></span><button id="share" class="secondary">Share invitation</button><button id="leave" class="secondary">Leave room</button></div><p id="status" class="status"></p><div id="secret" class="secret hidden"><img id="secretImg" alt="Your mystery person"><div><b>Your secret character</b><p id="secretName"></p><button id="toggleSecret" class="secondary">Hide character</button></div></div><p id="waiting" class="muted">Waiting for a second player…</p></div><div class="panel"><div class="controls"><button id="resetBoard" class="secondary">Reset eliminated faces</button><button id="newRound" class="secondary">New round</button></div><p class="muted small">Tap faces to eliminate them from your private board.</p><p id="pending" class="status hidden"></p><div id="guessArea"><select id="guessSelect" aria-label="Guess character"></select><button id="guess">Make final guess</button></div></div><div class="game-layout"><section class="panel" id="qaPanel"><h2>Ask a question</h2><p class="muted small">On your turn, ask one yes/no question. Your opponent answers here. Your turn passes automatically when your opponent answers.</p><div id="qaFeed" class="qa-feed" aria-live="polite"><p class="qa-empty">Questions will appear here when both players join.</p></div><form id="qaForm" class="qa-form"><input id="qaInput" maxlength="200" placeholder="Is your person wearing glasses?" aria-label="Your yes or no question"><button id="qaSend" type="submit">Ask question</button></form><p id="qaError" class="qa-error small" role="alert"></p></section><div id="board" class="board"></div></div></section>
 <section id="aiGame" class="hidden">
   <div class="panel ai-top"><div class="controls"><span class="pill">Solo · Computer opponent</span><button id="aiRestart" class="secondary">New AI game</button><button id="aiExit" class="secondary">Back to menu</button></div><p id="aiStatus" class="status" aria-live="polite"></p><div class="secret"><img id="aiMyImg" alt="Your secret character"><div><b>Your mystery character (keep secret from the AI)</b><p id="aiMyName"></p><button id="aiToggle" class="secondary">Hide character</button></div></div></div>
-  <div class="game-layout"><section class="panel" id="aiPanel"><h2>Play against AI</h2><p class="muted small">Type a yes/no question in your own words. The computer understands a limited set of visible features; it will tell you when it cannot answer.</p><div id="aiFeed" class="qa-feed" aria-live="polite"></div><form id="aiAskForm" class="qa-form"><input id="aiAskInput" maxlength="200" placeholder="Does your person wear glasses?" aria-label="Question for computer"><button id="aiAskButton" type="submit">Ask AI</button></form><div id="aiAnswerArea" class="hidden"><p id="aiQuestion" class="status"></p><div class="controls"><button id="aiYes">Yes</button><button id="aiNo" class="secondary">No</button></div></div><p id="aiError" class="qa-error small" role="alert"></p><div id="aiGuessArea"><p class="muted small">Think you know the AI's person? Make your final guess.</p><select id="aiGuessSelect" aria-label="Final guess against AI"></select><button id="aiGuessButton">Final guess</button></div><p class="muted small">AI mode is free, runs locally, and does not send questions to a language-model service. Answers are based on manually assigned visible traits and may occasionally be inaccurate.</p></section><div id="aiBoard" class="board"></div></div>
+  <div class="game-layout"><section class="panel" id="aiPanel"><h2>Play against AI</h2><p class="muted small">Type a yes/no question in your own words. The computer understands a limited set of visible features; it will tell you when it cannot answer.</p><div id="aiFeed" class="qa-feed" aria-live="polite"></div><form id="aiAskForm" class="qa-form"><input id="aiAskInput" maxlength="200" placeholder="Does your person wear glasses?" aria-label="Question for computer"><button id="aiAskButton" type="submit">Ask AI</button></form><div id="aiAnswerArea" class="hidden"><p id="aiQuestion" class="status"></p><div class="controls"><button id="aiYes">Yes</button><button id="aiNo" class="secondary">No</button></div></div><p id="aiError" class="qa-error small" role="alert"></p><div id="aiGuessArea"><p class="muted small">Think you know the AI's person? Make your final guess.</p><select id="aiGuessSelect" aria-label="Final guess against AI"></select><button id="aiGuessButton">Final guess</button></div><p class="muted small">Easy asks less efficient questions; Smart usually chooses good questions; Smartest plans two questions ahead. All levels answer your questions using the same character data. AI mode is free, runs locally, and does not send questions to a language-model service. Answers are based on manually assigned visible traits and may occasionally be inaccurate.</p></section><div id="aiBoard" class="board"></div></div>
 </section>
 <section class="panel help"><b>How to play:</b> Each player gets a secret person. Take turns asking yes/no questions (for example, “Is your person wearing glasses?”). Tap the people you rule out. When you think you know the answer, make a final guess. Your opponent confirms whether your final guess is correct. Turns switch automatically after each answer. A correct guess wins; a wrong guess loses. Use the built-in question box and Yes/No buttons to play entirely on this website.</section></main>
 <script src="firebase-config.js"></script><script type="module">
@@ -150,6 +151,7 @@ const aiQuestions = [
  ['hat','Does your person wear a hat?'],
 ];
 let aiState=null, aiRevealed=true, aiCelebrated=false;
+const aiLevelNames={easy:"Easy",smart:"Smart",smartest:"Smartest"};
 const aiRand=n=>Math.floor(Math.random()*n);
 function aiLog(speaker,txt){
  const el=document.createElement('div');el.className='qa-item'+(speaker==='You'?' mine':'');
@@ -158,43 +160,101 @@ function aiLog(speaker,txt){
  el.append(strong,p);$('aiFeed').append(el);$('aiFeed').scrollTop=$('aiFeed').scrollHeight;
 }
 function aiTraitValue(index,trait){return aiTraits[trait]?.has(index)??false}
+// Local, deterministic language understanding: no network calls and no secret sent to a service.
+// Parse only characteristics represented in the portrait data; never guess at unsupported facts.
+const aiLexicon = [
+ ['glasses',/\b(glasses|spectacles|eyeglasses|eyewear|specs|frames)\b/],
+ ['facialhair',/\b(beard|bearded|moustache|mustache|facial hair|stubble|goatee|whiskers|unshaven)\b/],
+ ['hat',/\b(hat|beanie|cap|headwear|headgear)\b/],
+ ['clerical',/\b(clerical collar|priest collar|dog collar|roman collar|clergy collar|white collar)\b/],
+ ['longhair',/\b(long hair|longer hair|hair.*long|shoulder.length hair|hair past (their|the) shoulders)\b/],
+ ['curlyhair',/\b(curl|curls|curly|wavy|waves|ringlets|frizzy)\b/],
+ ['blondhair',/\b(blond|blonde|fair.haired|fair hair|yellow hair)\b/],
+ ['grayhair',/\b(gr[ae]y hair|gr[ae]y.haired|white hair|silver hair|gr[ae]ying|silver.haired)\b/],
+ ['redhair',/\b(red hair|redhead|redheaded|ginger|auburn)\b/],
+ ['tie',/\b(tie|necktie|bow tie)\b/],
+ ['whiteclothing',/\b(white (shirt|top|clothes|clothing|blouse|jacket|outfit)|wearing white|dressed in white|light.colou?red (shirt|top|clothes|clothing))\b/],
+ ['darkclothing',/\b((black|dark) (shirt|top|clothes|clothing|blouse|jacket|outfit)|wearing black|dressed in black|dark.colou?red clothing)\b/]
+];
+const aiUnsupported=/\b(age|old|young|gender|man|woman|male|female|tall|short|smile|smiling|teeth|earrings|earring|nose|eyes|eye colour|eye color|blue eyes|brown eyes|green eyes|skin|race|ethnicity|job|work|teacher|minister|married|friendly|nice|funny|happy|sad|personality|t-shirt|tshirt|blue shirt|green shirt|pink shirt|red shirt|sweater|hoodie|jewelry|jewellery)\b/;
+function aiNormalize(q){return q.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim()}
+function aiParseSingle(raw){
+ const q=aiNormalize(raw);
+ if(!q||aiUnsupported.test(q))return null;
+ // Names are matched only as explicit identity questions, never as loose substring matches.
+ const namesFound=names.map((name,i)=>({name,i})).filter(({name})=>new RegExp('\\b'+name.toLowerCase().replace(/[^a-z0-9 ]/g,'\\$&')+'\\b','i').test(q));
+ if(namesFound.length===1&&/\b(is (it|your|the|this|their|that|my)|are they|named|called|name|person|character|guess|could it be|might it be)\b/.test(q))return {kind:'name',index:namesFound[0].i};
+ const hits=aiLexicon.filter(([,re])=>re.test(q));
+ if(hits.length!==1)return null; // Ambiguous or unsupported compound question.
+ const trait=hits[0][0];
+ const neg=/\b(no|not|without|doesn't|does not|isn't|is not|hasn't|has not|never|lacks?|aren't|are not|can't|cannot)\b/.test(q);
+ return {kind:'trait',trait,neg};
+}
 function aiInterpret(raw){
- const q=raw.toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();
- // Exact name guesses work as questions too; avoid fuzzy person-name matching.
- const nameMatch=names.findIndex(n=>new RegExp('\\b'+n.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(q));
- if(nameMatch>=0&&/\b(is|are|named|name|person|character|called)\b/.test(q))return {name:nameMatch};
- const patterns=[
- ['glasses',/glasses|spectacles|eyeglasses|wear.*frames/],
- ['facialhair',/beard|moustache|mustache|facial hair|stubble|goatee/],
- ['hat',/\bhat\b|beanie|cap on|headwear/],
- ['clerical',/clerical|priest|pastor collar|dog collar|roman collar|collar.*(white|priest)/],
- ['longhair',/long hair|hair.*long|shoulder.length hair/],
- ['curlyhair',/curl|wavy hair|frizzy/],
- ['blondhair',/blond|blonde|yellow hair/],
- ['grayhair',/gray hair|grey hair|white hair|silver hair|graying|greying/],
- ['redhair',/red hair|ginger|auburn/],
- ['tie',/\btie\b|necktie/],
- ['whiteclothing',/(wear|shirt|clothes|clothing|top|blouse|jacket).*(white|light colored)|(white|light colored).*(shirt|clothes|clothing|top|blouse|jacket)/],
- ['darkclothing',/(wear|shirt|clothes|clothing|top|jacket).*(black|dark)|(black|dark).*(shirt|clothes|clothing|top|jacket)/],
- ];
- const hit=patterns.find(([,re])=>re.test(q));if(!hit)return null;
- const neg=/\b(no|not|without|doesn't|isn't|hasn't|never)\b/.test(q);
- return {trait:hit[0],neg};
+ const q=aiNormalize(raw);
+ // Supports simple two-part Boolean questions, including either/or and both/and.
+ // Avoid splitting phrases such as 'black and white' unless both halves parse.
+ const split=q.match(/^(.+?)\s+(and|or)\s+(.+?)[?.!]*$/);
+ if(split){
+  const left=aiParseSingle(split[1]),right=aiParseSingle(split[3]);
+  if(left&&right)return {kind:split[2],left,right};
+  return null;
+ }
+ return aiParseSingle(q);
+}
+function aiEvaluate(parsed,index){
+ if(parsed.kind==='name')return parsed.index===index;
+ if(parsed.kind==='trait')return aiTraitValue(index,parsed.trait)!==!!parsed.neg;
+ if(parsed.kind==='and')return aiEvaluate(parsed.left,index)&&aiEvaluate(parsed.right,index);
+ if(parsed.kind==='or')return aiEvaluate(parsed.left,index)||aiEvaluate(parsed.right,index);
+ return false;
 }
 function aiAnswer(raw){
  const parsed=aiInterpret(raw);if(!parsed)return null;
- let yes=parsed.name!==undefined?aiState.aiSecret===parsed.name:aiTraitValue(aiState.aiSecret,parsed.trait);
- if(parsed.neg)yes=!yes;
- return yes?'Yes':'No';
+ return aiEvaluate(parsed,aiState.aiSecret)?'Yes':'No';
 }
 function aiChooseQuestion(){
  const pool=aiQuestions.filter(([trait])=>!aiState.askedTraits.has(trait));
  const total=aiState.candidates.length;
+ if(!total)return null;
  const ranked=pool.map(([trait,text])=>{
   const yes=aiState.candidates.filter(i=>aiTraitValue(i,trait)).length;
-  return {trait,text,score:Math.min(yes,total-yes)};
+  const no=total-yes;
+  const p=yes/total;
+  const entropy=p===0||p===1?0:-(p*Math.log2(p)+(1-p)*Math.log2(1-p));
+  // Expected size of the candidate set after this question.
+  const expected=(yes*yes+no*no)/total;
+  return {trait,text,score:entropy,expected,yes,no};
  }).filter(q=>q.score>0).sort((a,b)=>b.score-a.score);
- return ranked[0]||null;
+ if(!ranked.length)return null;
+ if(aiState.level==='easy'){
+  // Easy asks useful but often inefficient questions, so the player has more time.
+  const choices=ranked.slice(0,Math.min(8,ranked.length));
+  return choices[Math.floor(Math.random()*choices.length)];
+ }
+ if(aiState.level==='smart'){
+  // Smart generally asks strong questions, with a little variety.
+  const choices=ranked.slice(0,Math.min(3,ranked.length));
+  return choices[Math.floor(Math.random()*choices.length)];
+ }
+ // Smartest uses a two-step lookahead: prefer questions that lead to
+ // another effective split regardless of whether the answer is yes or no.
+ const options=ranked.map(q=>{
+  let future=0;
+  for(const answer of [true,false]){
+   const branch=aiState.candidates.filter(i=>aiTraitValue(i,q.trait)===answer);
+   if(branch.length<=1)continue;
+   let best=branch.length;
+   for(const [other] of pool){
+    if(other===q.trait)continue;
+    const count=branch.filter(i=>aiTraitValue(i,other)).length;
+    best=Math.min(best,(count*count+(branch.length-count)**2)/branch.length);
+   }
+   future+=branch.length/total*best;
+  }
+  return {...q,future};
+ }).sort((a,b)=>a.future-b.future||a.expected-b.expected);
+ return options[0];
 }
 function aiShowBoard(){
  const board=$('aiBoard');board.replaceChildren();
@@ -223,23 +283,34 @@ function aiEnd(winner,explanation){
 }
 function aiTurn(){
  if(aiState.winner!==null)return;
- if(aiState.candidates.length===0){aiLog('AI','My answers seem inconsistent with the portrait traits. I will make a guess.');aiState.candidates=names.map((_,i)=>i)}
- if(aiState.candidates.length===1||aiState.askedTraits.size>=10){
+ if(aiState.candidates.length===0){
+  // An answer contradicted the portrait database. Recover instead of pretending certainty.
+  aiLog('AI','That answer does not fit the portrait descriptions I have. I will reconsider everyone and keep playing.');
+  aiState.candidates=names.map((_,i)=>i).filter(i=>!aiState.rejected.has(i));
+  if(!aiState.candidates.length)aiState.candidates=names.map((_,i)=>i);
+  aiState.askedTraits.clear();
+ }
+ if(aiState.candidates.length===1){
   const pick=aiState.candidates[0];
   aiLog('AI','My final guess is '+names[pick]+'.');
   aiEnd(pick===aiState.humanSecret?'ai':'human',pick===aiState.humanSecret?'I guessed your character correctly!':'I guessed your character incorrectly!');return;
  }
  const q=aiChooseQuestion();
- if(!q){const pick=aiState.candidates[0];aiLog('AI','My final guess is '+names[pick]+'.');aiEnd(pick===aiState.humanSecret?'ai':'human',pick===aiState.humanSecret?'I guessed correctly!':'I guessed incorrectly!');return}
+ if(!q){
+  // No useful traits remain: ask for a name confirmation instead of a blind guess.
+  const pick=aiState.candidates[Math.floor(Math.random()*aiState.candidates.length)];
+  aiState.pending={name:pick,text:'Is your mystery person '+names[pick]+'?'};
+  aiLog('AI',aiState.pending.text);aiRender();return;
+ }
  aiState.pending=q;aiState.askedTraits.add(q.trait);aiLog('AI',q.text);aiRender();
 }
 function aiStart(){
- aiState={aiSecret:aiRand(names.length),humanSecret:aiRand(names.length),turn:'human',winner:null,pending:null,candidates:names.map((_,i)=>i),askedTraits:new Set(),eliminated:new Set()};
+ aiState={level:$('aiDifficulty').value,aiSecret:aiRand(names.length),humanSecret:aiRand(names.length),turn:'human',winner:null,pending:null,candidates:names.map((_,i)=>i),askedTraits:new Set(),rejected:new Set(),eliminated:new Set()};
  aiCelebrated=false;aiRevealed=true;
  $('setup').classList.add('hidden');$('game').classList.add('hidden');$('aiGame').classList.remove('hidden');
  $('aiFeed').replaceChildren();$('aiError').textContent='';$('aiAskInput').value='';
  $('aiGuessSelect').innerHTML='<option value="">Choose a person…</option>'+names.map((n,i)=>`<option value="${i}">${n}</option>`).join('');
- aiShowBoard();aiLog('AI','I have chosen a secret character. Ask me a yes/no question about visible features!');aiRender();
+ aiShowBoard();aiLog('AI','Difficulty: '+aiLevelNames[aiState.level]+'. I have chosen a secret character. Ask a yes/no question in your own words. I understand synonyms, simple AND/OR questions, and names. Unsupported details will be flagged instead of guessed.');aiRender();
 }
 $('playAI').onclick=aiStart;
 $('aiRestart').onclick=aiStart;
@@ -249,15 +320,25 @@ $('aiAskForm').onsubmit=e=>{
  e.preventDefault();if(!aiState||aiState.turn!=='human'||aiState.winner!==null)return;
  const raw=$('aiAskInput').value.trim();if(!raw)return;
  const answer=aiAnswer(raw);
- if(!answer){$('aiError').textContent='I cannot reliably answer that question. Try glasses, beard, hair length or colour, hat, clerical collar, tie, or clothing colour. You can also ask about a person by name.';return}
+ if(!answer){$('aiError').textContent='I can only answer questions supported by the portrait descriptions. Try “Does your person wear glasses?”, “Do they have curly hair?”, “Are they wearing black?”, “Do they have glasses and a beard?”, or “Is your person Jeff?”.';return}
  $('aiError').textContent='';aiLog('You',raw);aiLog('AI',answer);$('aiAskInput').value='';
  aiState.turn='ai';aiTurn();
 };
 function aiRespond(yes){
  if(!aiState||aiState.turn!=='ai'||!aiState.pending||aiState.winner!==null)return;
- const trait=aiState.pending.trait;
+ const pending=aiState.pending;
  aiLog('You',yes?'Yes':'No');
- aiState.candidates=aiState.candidates.filter(i=>aiTraitValue(i,trait)===yes);
+ if(pending.name!==undefined){
+  if(yes){
+   const pick=pending.name;
+   aiLog('AI','My final guess is '+names[pick]+'.');
+   aiEnd(pick===aiState.humanSecret?'ai':'human',pick===aiState.humanSecret?'I guessed correctly!':'My guess was incorrect.');return;
+  }
+  aiState.rejected.add(pending.name);
+  aiState.candidates=aiState.candidates.filter(i=>i!==pending.name);
+ }else{
+  aiState.candidates=aiState.candidates.filter(i=>aiTraitValue(i,pending.trait)===yes);
+ }
  aiState.pending=null;aiState.turn='human';aiRender();
 }
 $('aiYes').onclick=()=>aiRespond(true);$('aiNo').onclick=()=>aiRespond(false);
